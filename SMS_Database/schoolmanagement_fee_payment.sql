@@ -1,0 +1,58 @@
+-- MySQL dump 10.13  Distrib 8.0.23, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: schoolmanagement
+-- ------------------------------------------------------
+-- Server version	8.0.23
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `fee_payment`
+--
+
+DROP TABLE IF EXISTS `fee_payment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `fee_payment` (
+  `payment_id` int NOT NULL AUTO_INCREMENT,
+  `installment_no` int NOT NULL,
+  `fees_amount` int NOT NULL,
+  `payment_date` date NOT NULL,
+  `payment_mode` varchar(7) NOT NULL,
+  `transaction_id` varchar(25) DEFAULT NULL,
+  `student_gr_no` int DEFAULT NULL,
+  PRIMARY KEY (`payment_id`),
+  KEY `FKktvlwy2h8im6dwkgxqfh3r0xo` (`student_gr_no`),
+  CONSTRAINT `FKktvlwy2h8im6dwkgxqfh3r0xo` FOREIGN KEY (`student_gr_no`) REFERENCES `student` (`gr_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `fee_payment`
+--
+
+LOCK TABLES `fee_payment` WRITE;
+/*!40000 ALTER TABLE `fee_payment` DISABLE KEYS */;
+INSERT INTO `fee_payment` VALUES (1,1,4000,'2020-04-05','Online','568798',456401),(2,1,4000,'2020-04-06','Online','123412',456402),(3,1,5000,'2020-04-07','Online','568799',456403),(4,1,5000,'2020-05-08','Online','636363',456404),(5,1,4000,'2020-05-09','Online','141414',456404),(6,1,4000,'2020-05-14','Online','252525',456405),(7,1,2000,'2020-05-18','Online','787878',456406),(8,1,2000,'2020-05-28','Online','989898',456407),(9,1,2000,'2020-05-08','Online','454545',456408),(10,1,3000,'2020-06-14','Online','858585',456409),(11,1,3000,'2020-06-24','Online','145454',456410),(12,1,3000,'2020-06-10','Online','636975',456411),(13,1,4000,'2020-06-01','Online','789659',456412),(14,1,4000,'2020-06-11','Online','786563',456413),(15,2,4000,'2020-08-05','Online','998989',456401),(16,2,4000,'2020-08-06','Online','845129',456402),(17,2,5000,'2020-08-07','Online','845129',456403),(18,2,5000,'2020-08-08','Online','451122',456404),(19,2,4000,'2020-08-09','Online','541123',456404),(20,2,4000,'2020-08-14','Online','455661',456405),(21,2,2000,'2020-08-18','Online','786644',456406),(22,2,2000,'2020-08-28','Online','665455',456407),(23,2,2000,'2020-08-08','Online','896656',456408),(24,2,3000,'2020-09-14','Online','899624',456409),(25,2,3000,'2020-09-24','Online','145454',456410),(26,2,3000,'2020-09-10','Online','636975',456411),(27,2,4000,'2020-09-01','Online','789659',456412),(28,2,4000,'2020-09-11','Online','786563',456413);
+/*!40000 ALTER TABLE `fee_payment` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2021-05-27 14:37:23
